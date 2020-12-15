@@ -40,7 +40,7 @@ print("#"*50)
 # ex: cap = cv2.VideoCapture(0)
 
 #This way I can use my phone's camera and show everything to see if
-#face detection works. Open Google İmages and show pictures to your camera.
+#face detection works. Open Google Images and show pictures to your camera.
 ##########################################################
 cap = cv2.VideoCapture(1)
 
@@ -55,7 +55,7 @@ while True:
     for encodeFace, faceLoc in zip(encodesCurFrame, facesCurFrame):
         matches = face_recognition.compare_faces(encodeListKnown, encodeFace)
         faceDistance = face_recognition.face_distance(encodeListKnown, encodeFace)
-        print(faceDistance) #THE LOWER IS BETTER MATCH
+        print(faceDistance) ########################THE LOWER IS THE BETTER MATCH
 
         matchIndex = np.argmin(faceDistance)
 
